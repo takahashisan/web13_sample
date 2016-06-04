@@ -1,0 +1,13 @@
+<h1>ユーザー一覧</h1>
+
+
+<% @users.each do |user| %>
+	<h2>
+		<% if user.name.present? %>
+		<%= link_to user.name, user_path(user) %>
+		<% else %>
+		<%= link_to "名無しさん", user_path(user) %>
+		<% end %>
+	</h2>
+
+<% end %>

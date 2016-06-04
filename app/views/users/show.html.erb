@@ -1,0 +1,27 @@
+<h1><%= @user.name %>のマイページ</h1>
+
+<%= link_to "#{@user.name}のお気に入り一覧", likes_user_path(@user) %>
+
+
+
+
+<h1>自分の投稿一覧</h1>
+
+<% @user.posts.each do |post| %>
+	
+
+	<h2>
+		<%= link_to "#{post.title}", post_path(post) %>
+	</h2>
+	<div>本文:
+		<%= post.body %>
+	</div>
+	<br>
+	<div>
+		投稿者:<%= post.user.try(:name)%>
+	</div>
+
+	
+<% end %>
+
+
